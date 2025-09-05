@@ -2,41 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* PsycheScreen Design System - Professional Healthcare Platform */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base Colors - Calming healthcare palette */
+    --background: 250 100% 98%;
+    --foreground: 220 15% 25%;
 
+    /* Healthcare Primary - Trust & Professional */
+    --primary: 210 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 210 100% 94%;
+    --primary-glow: 210 85% 65%;
+
+    /* Healthcare Secondary - Calm & Healing */
+    --secondary: 165 60% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-soft: 165 100% 93%;
+    
+    /* Mental Health Accent - Warm & Supportive */
+    --accent: 200 70% 50%;
+    --accent-foreground: 0 0% 100%;
+    --accent-soft: 200 100% 95%;
+
+    /* Success & Wellness */
+    --success: 145 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --success-soft: 145 100% 94%;
+
+    /* Warning & Attention */
+    --warning: 35 85% 55%;
+    --warning-foreground: 0 0% 100%;
+    --warning-soft: 35 100% 95%;
+
+    /* Cards & Surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 15% 25%;
+    --card-border: 220 20% 92%;
 
+    /* Interactive Elements */
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 10% 55%;
+    --border: 220 20% 88%;
+    --input: 220 20% 95%;
+    --ring: 210 85% 45%;
+
+    /* Popover & Dialogs */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 15% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Destructive Actions */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Medical Data Visualization */
+    --chart-primary: 210 85% 45%;
+    --chart-secondary: 165 60% 45%;
+    --chart-tertiary: 35 85% 55%;
+    --chart-quaternary: 145 70% 45%;
+    --chart-background: 220 25% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(210, 85%, 45%) 0%, hsl(200, 70%, 50%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(220, 25%, 98%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(145, 70%, 45%) 0%, hsl(165, 60%, 45%) 100%);
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Shadows */
+    --shadow-soft: 0 2px 20px hsl(220, 25%, 80% / 0.1);
+    --shadow-medium: 0 8px 30px hsl(220, 25%, 70% / 0.15);
+    --shadow-strong: 0 15px 40px hsl(220, 25%, 60% / 0.2);
+    --shadow-glow: 0 0 30px hsl(210, 85%, 65% / 0.3);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +94,74 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Base Colors - Dark Healthcare Theme */
+    --background: 220 25% 8%;
+    --foreground: 220 15% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Healthcare Primary - Maintain trust in dark mode */
+    --primary: 210 85% 60%;
+    --primary-foreground: 220 25% 8%;
+    --primary-soft: 210 60% 15%;
+    --primary-glow: 210 85% 70%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Healthcare Secondary - Calm in dark */
+    --secondary: 165 45% 35%;
+    --secondary-foreground: 220 15% 95%;
+    --secondary-soft: 165 40% 12%;
+    
+    /* Mental Health Accent - Supportive dark */
+    --accent: 200 55% 40%;
+    --accent-foreground: 220 15% 95%;
+    --accent-soft: 200 50% 12%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Success & Wellness - Dark variants */
+    --success: 145 55% 40%;
+    --success-foreground: 220 15% 95%;
+    --success-soft: 145 50% 12%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Warning - Dark variants */
+    --warning: 35 75% 50%;
+    --warning-foreground: 220 25% 8%;
+    --warning-soft: 35 60% 12%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Cards & Surfaces - Dark */
+    --card: 220 20% 12%;
+    --card-foreground: 220 15% 90%;
+    --card-border: 220 20% 20%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Interactive Elements - Dark */
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 10% 65%;
+    --border: 220 20% 20%;
+    --input: 220 20% 18%;
+    --ring: 210 85% 60%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Popover & Dialogs - Dark */
+    --popover: 220 20% 12%;
+    --popover-foreground: 220 15% 90%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Destructive - Dark */
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 220 15% 95%;
+
+    /* Medical Data Visualization - Dark */
+    --chart-primary: 210 85% 60%;
+    --chart-secondary: 165 55% 50%;
+    --chart-tertiary: 35 75% 55%;
+    --chart-quaternary: 145 60% 50%;
+    --chart-background: 220 25% 10%;
+
+    /* Gradients - Dark variants */
+    --gradient-hero: linear-gradient(135deg, hsl(210, 85%, 50%) 0%, hsl(200, 70%, 45%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220, 20%, 12%) 0%, hsl(220, 25%, 15%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(145, 55%, 40%) 0%, hsl(165, 50%, 40%) 100%);
+
+    /* Shadows - Dark variants */
+    --shadow-soft: 0 2px 20px hsl(220, 25%, 5% / 0.3);
+    --shadow-medium: 0 8px 30px hsl(220, 25%, 5% / 0.4);
+    --shadow-strong: 0 15px 40px hsl(220, 25%, 5% / 0.5);
+    --shadow-glow: 0 0 30px hsl(210, 85%, 60% / 0.4);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +179,92 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Healthcare specific typography */
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  /* Gradient utilities */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-success {
+    background: var(--gradient-success);
+  }
+
+  /* Shadow utilities */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Glass morphism effect for modern UI */
+  .glass {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  /* Custom keyframes */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Scroll behavior */
+  .scroll-smooth {
+    scroll-behavior: smooth;
   }
 }
