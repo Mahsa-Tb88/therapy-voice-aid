@@ -2,13 +2,23 @@ import { Button } from "@/components/ui/button";
 import { Phone, ArrowRight, Brain } from "lucide-react";
 import { useState } from "react";
 import PatientFormDialog from "./PatientFormDialog";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center">
-      <div className="container mx-auto px-4 text-center">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroBg} 
+          alt="Professional healthcare setting" 
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-background/80" />
+      </div>
+      <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Icon */}
           <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-8">

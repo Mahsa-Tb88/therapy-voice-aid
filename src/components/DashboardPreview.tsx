@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar } from 'recharts';
 import { TrendingUp, TrendingDown, Activity, Users, Phone, Calendar } from "lucide-react";
+import dashboardScreen from "@/assets/dashboard-screen.jpg";
 
 // Sample data for charts
 const moodData = [
@@ -47,6 +48,17 @@ const DashboardPreview = () => {
             Real-time visualization of patient mental health trends, medication adherence, 
             and treatment progress with actionable insights for clinical teams.
           </p>
+        </div>
+
+        {/* Dashboard Preview Image */}
+        <div className="mb-16">
+          <div className="relative max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl">
+            <img 
+              src={dashboardScreen} 
+              alt="PsycheScreen dashboard showing mental health analytics" 
+              className="w-full h-auto"
+            />
+          </div>
         </div>
 
         {/* Key Metrics */}
