@@ -1,31 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, MessageCircle, Brain, Users, Clock, CheckCircle } from "lucide-react";
+import { Phone, MessageCircle, Brain, CheckCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import aiCallPhone from "@/assets/ai-call-phone.jpg";
 
 const AICallSection = () => {
-  const callFeatures = [
-    {
-      icon: Brain,
-      title: "AI-Driven Interactions",
-      description: "Engage with an AI agent in regular, empathetic conversations."
-    },
-    {
-      icon: Clock,
-      title: "Proactive Monitoring", 
-      description: "Receive real-time insights into mental well-being trends."
-    },
-    {
-      icon: Users,
-      title: "Cost Reduction",
-      description: "Optimize therapist time and session frequency, reducing costs."
-    },
-    {
-      icon: Phone,
-      title: "24/7 Availability",
-      description: "Get support whenever you need it, day or night."
-    }
-  ];
-
   const callProcess = [
     {
       step: "1",
@@ -54,7 +32,7 @@ const AICallSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-secondary/30">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4">
@@ -71,23 +49,13 @@ const AICallSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Left side - Features */}
-          <div className="space-y-6">
-            {callFeatures.map((feature, index) => (
-              <Card key={index} className="border border-primary/20 bg-primary/5 hover:bg-primary/10 transition-colors">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
-                      <p className="text-muted-foreground text-sm">{feature.description}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Left side - Phone Image */}
+          <div className="flex justify-center">
+            <img 
+              src={aiCallPhone} 
+              alt="User receiving AI agent call on smartphone" 
+              className="max-w-md w-full h-auto rounded-lg shadow-lg"
+            />
           </div>
 
           {/* Right side - Call Interface Mockup */}
@@ -125,7 +93,7 @@ const AICallSection = () => {
         </div>
 
         {/* Process Flow */}
-        <div className="bg-background rounded-xl p-8 border">
+        <div className="bg-secondary/10 rounded-xl p-8 border">
           <h3 className="text-2xl font-bold text-center mb-8">How AI Calls Work</h3>
           <div className="grid md:grid-cols-4 gap-6">
             {callProcess.map((step, index) => (
