@@ -53,26 +53,26 @@ const AICallSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left side - Photo Grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
             <img 
               src={aiCallPhone} 
-              alt="User receiving AI agent call on smartphone" 
-              className="rounded-lg shadow-lg w-full h-auto"
+              alt="Woman receiving AI agent call on smartphone" 
+              className="rounded-lg shadow-lg w-full aspect-square object-cover"
             />
             <img 
               src={aiCallDriving} 
-              alt="Person safely talking with AI agent while driving" 
-              className="rounded-lg shadow-lg w-full h-auto"
+              alt="Man safely talking with AI agent while driving" 
+              className="rounded-lg shadow-lg w-full aspect-square object-cover"
             />
             <img 
               src={aiCallBed} 
-              alt="Person lying on bed talking with AI agent" 
-              className="rounded-lg shadow-lg w-full h-auto"
+              alt="Woman lying on bed talking with AI agent" 
+              className="rounded-lg shadow-lg w-full aspect-square object-cover"
             />
             <img 
               src={aiCallWalking} 
-              alt="Person walking outdoors talking with AI agent" 
-              className="rounded-lg shadow-lg w-full h-auto"
+              alt="Woman walking outdoors talking with AI agent" 
+              className="rounded-lg shadow-lg w-full aspect-square object-cover"
             />
           </div>
 
