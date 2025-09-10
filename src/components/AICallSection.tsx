@@ -2,6 +2,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, MessageCircle, Brain, CheckCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import aiCallPhone from "@/assets/ai-call-phone.jpg";
+import aiCallDriving from "@/assets/ai-call-driving.jpg";
+import aiCallBed from "@/assets/ai-call-bed.jpg";
+import aiCallWalking from "@/assets/ai-call-walking.jpg";
 
 const AICallSection = () => {
   const callProcess = [
@@ -49,12 +52,27 @@ const AICallSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Left side - Phone Image */}
-          <div className="flex justify-center">
+          {/* Left side - Photo Grid */}
+          <div className="grid grid-cols-2 gap-4">
             <img 
               src={aiCallPhone} 
               alt="User receiving AI agent call on smartphone" 
-              className="max-w-md w-full h-auto rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg w-full h-auto"
+            />
+            <img 
+              src={aiCallDriving} 
+              alt="Person safely talking with AI agent while driving" 
+              className="rounded-lg shadow-lg w-full h-auto"
+            />
+            <img 
+              src={aiCallBed} 
+              alt="Person lying on bed talking with AI agent" 
+              className="rounded-lg shadow-lg w-full h-auto"
+            />
+            <img 
+              src={aiCallWalking} 
+              alt="Person walking outdoors talking with AI agent" 
+              className="rounded-lg shadow-lg w-full h-auto"
             />
           </div>
 
