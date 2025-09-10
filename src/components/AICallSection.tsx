@@ -71,7 +71,7 @@ const AICallSection = () => {
             />
             <img 
               src={aiCallWalking} 
-              alt="Woman walking outdoors talking with AI agent" 
+              alt="Man walking outdoors talking with AI agent" 
               className="rounded-lg shadow-lg w-full aspect-square object-cover"
             />
           </div>
