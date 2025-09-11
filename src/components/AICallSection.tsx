@@ -57,22 +57,22 @@ const AICallSection = () => {
             <img 
               src={aiCallPhone} 
               alt="User receiving AI agent call on smartphone" 
-              className="rounded-lg shadow-lg w-full h-auto"
+              className="rounded-lg shadow-lg w-full aspect-square object-cover"
             />
             <img 
               src={aiCallDriving} 
               alt="Person safely talking with AI agent while driving" 
-              className="rounded-lg shadow-lg w-full h-auto"
+              className="rounded-lg shadow-lg w-full aspect-square object-cover"
             />
             <img 
               src={aiCallBed} 
               alt="Person lying on bed talking with AI agent" 
-              className="rounded-lg shadow-lg w-full h-auto"
+              className="rounded-lg shadow-lg w-full aspect-square object-cover"
             />
             <img 
               src={aiCallWalking} 
               alt="Person walking outdoors talking with AI agent" 
-              className="rounded-lg shadow-lg w-full h-auto"
+              className="rounded-lg shadow-lg w-full aspect-square object-cover"
             />
           </div>
 
