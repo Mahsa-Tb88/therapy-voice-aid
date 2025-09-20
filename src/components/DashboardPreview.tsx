@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar } from 'recharts';
 import { TrendingUp, TrendingDown, Activity, Users, Phone, Calendar } from "lucide-react";
-import dashboardScreen from "@/assets/dashboard-screen.jpg";
+import userDashboardScreen from "@/assets/user-dashboard-screen.jpg";
 
 // Sample data for charts
 const moodData = [
@@ -54,8 +54,8 @@ const DashboardPreview = () => {
         <div className="mb-16">
           <div className="relative max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl">
             <img 
-              src={dashboardScreen} 
-              alt="PsycheScreen dashboard showing mental health analytics" 
+              src={userDashboardScreen} 
+              alt="PsycheScreen user dashboard showing patient profile and information" 
               className="w-full h-auto"
             />
           </div>
