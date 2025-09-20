@@ -136,109 +136,365 @@ const DashboardPreview = () => {
           </Card>
         </div>
 
-        {/* Charts Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Mood Trends */}
-          <Card className="shadow-medium">
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <Activity className="w-5 h-5 text-primary" />
-                <span>Mental Health Trends</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ResponsiveContainer width="100%" height={300}>
-                <AreaChart data={moodData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                  <XAxis dataKey="date" stroke="hsl(var(--muted-foreground))" />
-                  <YAxis stroke="hsl(var(--muted-foreground))" />
-                  <Tooltip 
-                    contentStyle={{
-                      backgroundColor: 'hsl(var(--card))',
-                      border: '1px solid hsl(var(--border))',
-                      borderRadius: '8px'
-                    }}
-                  />
-                  <Area type="monotone" dataKey="depression" stackId="1" stroke="hsl(var(--destructive))" fill="hsl(var(--destructive))" fillOpacity={0.3} />
-                  <Area type="monotone" dataKey="anxiety" stackId="2" stroke="hsl(var(--warning))" fill="hsl(var(--warning))" fillOpacity={0.3} />
-                  <Area type="monotone" dataKey="happiness" stackId="3" stroke="hsl(var(--success))" fill="hsl(var(--success))" fillOpacity={0.3} />
-                </AreaChart>
-              </ResponsiveContainer>
-            </CardContent>
-          </Card>
-
-          {/* Medication Adherence */}
-          <Card className="shadow-medium">
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <Activity className="w-5 h-5 text-secondary" />
-                <span>Medication Adherence</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
-                  <Pie
-                    data={medicationData}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={60}
-                    outerRadius={120}
-                    paddingAngle={2}
-                    dataKey="value"
-                  >
-                    {medicationData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip 
-                    contentStyle={{
-                      backgroundColor: 'hsl(var(--card))',
-                      border: '1px solid hsl(var(--border))',
-                      borderRadius: '8px'
-                    }}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
-              <div className="flex justify-center space-x-6 mt-4">
-                {medicationData.map((item, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }} />
-                    <span className="text-sm text-muted-foreground">{item.name}: {item.value}%</span>
+        {/* Alternative Sections Grid */}
+        <div className="space-y-12">
+          
+          {/* Patient Success Stories */}
+          <div>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Patient Success Stories</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="bg-gradient-card shadow-soft">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-primary-soft rounded-full flex items-center justify-center flex-shrink-0">
+                      <Users className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-2">Sarah M., 28</p>
+                      <p className="text-foreground text-sm">"The AI screening calls helped me identify my anxiety patterns. I've seen a 60% improvement in my daily mood scores."</p>
+                      <div className="flex items-center text-success text-xs mt-2">
+                        <TrendingUp className="w-3 h-3 mr-1" />
+                        60% improvement
+                      </div>
+                    </div>
                   </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+                </CardContent>
+              </Card>
 
-        {/* Weekly AI Calls Chart */}
-        <Card className="shadow-medium">
-          <CardHeader>
-            <CardTitle className="flex items-center space-x-2">
-              <Phone className="w-5 h-5 text-accent" />
-              <span>Weekly AI Call Activity</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={callData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                <XAxis dataKey="day" stroke="hsl(var(--muted-foreground))" />
-                <YAxis stroke="hsl(var(--muted-foreground))" />
-                <Tooltip 
-                  contentStyle={{
-                    backgroundColor: 'hsl(var(--card))',
-                    border: '1px solid hsl(var(--border))',
-                    borderRadius: '8px'
-                  }}
-                />
-                <Bar dataKey="calls" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="screenings" fill="hsl(var(--secondary))" radius={[4, 4, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
+              <Card className="bg-gradient-card shadow-soft">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-secondary-soft rounded-full flex items-center justify-center flex-shrink-0">
+                      <Activity className="w-6 h-6 text-secondary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-2">Michael R., 45</p>
+                      <p className="text-foreground text-sm">"Regular check-ins helped me stay on track with my treatment. My medication adherence improved from 60% to 95%."</p>
+                      <div className="flex items-center text-success text-xs mt-2">
+                        <TrendingUp className="w-3 h-3 mr-1" />
+                        95% adherence
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-card shadow-soft">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-accent-soft rounded-full flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-accent" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-2">Jessica L., 32</p>
+                      <p className="text-foreground text-sm">"The 24/7 availability gave me peace of mind. I could get support whenever I needed it most."</p>
+                      <div className="flex items-center text-success text-xs mt-2">
+                        <Calendar className="w-3 h-3 mr-1" />
+                        24/7 support
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Quick Actions Panel */}
+          <div>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Quick Actions</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <Card className="bg-gradient-card shadow-soft hover:shadow-medium transition-shadow cursor-pointer">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-primary-soft rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Calendar className="w-6 h-6 text-primary" />
+                  </div>
+                  <p className="text-sm font-medium text-foreground">Schedule Appointment</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-card shadow-soft hover:shadow-medium transition-shadow cursor-pointer">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-secondary-soft rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Activity className="w-6 h-6 text-secondary" />
+                  </div>
+                  <p className="text-sm font-medium text-foreground">View Reports</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-card shadow-soft hover:shadow-medium transition-shadow cursor-pointer">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-accent-soft rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Phone className="w-6 h-6 text-accent" />
+                  </div>
+                  <p className="text-sm font-medium text-foreground">Contact Patient</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-card shadow-soft hover:shadow-medium transition-shadow cursor-pointer">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-success-soft rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Users className="w-6 h-6 text-success" />
+                  </div>
+                  <p className="text-sm font-medium text-foreground">Add Patient</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Recent Activity Feed */}
+          <div>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Recent Activity</h3>
+            <Card className="shadow-medium">
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-4 p-3 bg-gradient-card rounded-lg">
+                    <div className="w-10 h-10 bg-primary-soft rounded-full flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-foreground">AI Call completed with Sarah M.</p>
+                      <p className="text-xs text-muted-foreground">Depression screening - Low risk detected</p>
+                    </div>
+                    <span className="text-xs text-muted-foreground">2 min ago</span>
+                  </div>
+
+                  <div className="flex items-center space-x-4 p-3 bg-gradient-card rounded-lg">
+                    <div className="w-10 h-10 bg-secondary-soft rounded-full flex items-center justify-center">
+                      <Calendar className="w-5 h-5 text-secondary" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-foreground">Follow-up scheduled for Michael R.</p>
+                      <p className="text-xs text-muted-foreground">Next appointment: Tomorrow 2:00 PM</p>
+                    </div>
+                    <span className="text-xs text-muted-foreground">15 min ago</span>
+                  </div>
+
+                  <div className="flex items-center space-x-4 p-3 bg-gradient-card rounded-lg">
+                    <div className="w-10 h-10 bg-accent-soft rounded-full flex items-center justify-center">
+                      <Activity className="w-5 h-5 text-accent" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-foreground">Weekly report generated</p>
+                      <p className="text-xs text-muted-foreground">156 calls completed, 89% satisfaction rate</p>
+                    </div>
+                    <span className="text-xs text-muted-foreground">1 hour ago</span>
+                  </div>
+
+                  <div className="flex items-center space-x-4 p-3 bg-gradient-card rounded-lg">
+                    <div className="w-10 h-10 bg-success-soft rounded-full flex items-center justify-center">
+                      <Users className="w-5 h-5 text-success" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-foreground">New patient registered</p>
+                      <p className="text-xs text-muted-foreground">Jessica L. added to monitoring program</p>
+                    </div>
+                    <span className="text-xs text-muted-foreground">3 hours ago</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Key Features Highlight */}
+          <div>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Key Platform Features</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card className="bg-gradient-card shadow-soft">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-primary-soft rounded-full flex items-center justify-center mb-4">
+                    <Phone className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-foreground mb-2">AI-Powered Calls</h4>
+                  <p className="text-sm text-muted-foreground">Automated screening calls that adapt to patient responses and detect mental health patterns.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-card shadow-soft">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-secondary-soft rounded-full flex items-center justify-center mb-4">
+                    <Activity className="w-6 h-6 text-secondary" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-foreground mb-2">Real-time Monitoring</h4>
+                  <p className="text-sm text-muted-foreground">Continuous tracking of patient mental health metrics with instant alerts for healthcare providers.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-card shadow-soft">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-accent-soft rounded-full flex items-center justify-center mb-4">
+                    <Users className="w-6 h-6 text-accent" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-foreground mb-2">Care Team Integration</h4>
+                  <p className="text-sm text-muted-foreground">Seamless collaboration between AI system and healthcare professionals for comprehensive care.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Upcoming Appointments */}
+          <div>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Upcoming Appointments</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="shadow-medium">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-lg font-semibold text-foreground">Today's Schedule</h4>
+                    <Calendar className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between p-3 bg-gradient-card rounded-lg">
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Sarah M.</p>
+                        <p className="text-xs text-muted-foreground">Follow-up Call</p>
+                      </div>
+                      <span className="text-xs text-muted-foreground">10:00 AM</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-gradient-card rounded-lg">
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Michael R.</p>
+                        <p className="text-xs text-muted-foreground">Screening Call</p>
+                      </div>
+                      <span className="text-xs text-muted-foreground">2:00 PM</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-gradient-card rounded-lg">
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Jessica L.</p>
+                        <p className="text-xs text-muted-foreground">Initial Assessment</p>
+                      </div>
+                      <span className="text-xs text-muted-foreground">4:30 PM</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-medium">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-lg font-semibold text-foreground">This Week</h4>
+                    <Activity className="w-5 h-5 text-secondary" />
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">Monday</span>
+                      <span className="text-sm font-medium text-foreground">8 appointments</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">Tuesday</span>
+                      <span className="text-sm font-medium text-foreground">12 appointments</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">Wednesday</span>
+                      <span className="text-sm font-medium text-foreground">6 appointments</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">Thursday</span>
+                      <span className="text-sm font-medium text-foreground">9 appointments</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">Friday</span>
+                      <span className="text-sm font-medium text-foreground">7 appointments</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* AI Call Summaries */}
+          <div>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Recent AI Call Summaries</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <Card className="shadow-medium">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-primary-soft rounded-full flex items-center justify-center">
+                        <Phone className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Sarah M.</p>
+                        <p className="text-xs text-muted-foreground">Depression Screening</p>
+                      </div>
+                    </div>
+                    <span className="text-xs text-success bg-success-soft px-2 py-1 rounded-full">Low Risk</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">Patient reported improved mood and better sleep patterns. Medication adherence at 95%. Recommended continued monitoring.</p>
+                  <div className="flex items-center justify-between text-xs text-muted-foreground">
+                    <span>Duration: 8 min</span>
+                    <span>Confidence: 92%</span>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-medium">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-warning-soft rounded-full flex items-center justify-center">
+                        <Phone className="w-5 h-5 text-warning" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Michael R.</p>
+                        <p className="text-xs text-muted-foreground">Anxiety Assessment</p>
+                      </div>
+                    </div>
+                    <span className="text-xs text-warning bg-warning-soft px-2 py-1 rounded-full">Moderate Risk</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">Elevated anxiety levels detected. Work-related stress factors identified. Scheduled follow-up with care team within 24 hours.</p>
+                  <div className="flex items-center justify-between text-xs text-muted-foreground">
+                    <span>Duration: 12 min</span>
+                    <span>Confidence: 87%</span>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-medium">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-success-soft rounded-full flex items-center justify-center">
+                        <Phone className="w-5 h-5 text-success" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Jessica L.</p>
+                        <p className="text-xs text-muted-foreground">Wellness Check</p>
+                      </div>
+                    </div>
+                    <span className="text-xs text-success bg-success-soft px-2 py-1 rounded-full">Excellent</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">Significant progress reported. Coping strategies working well. Patient feels supported and motivated to continue treatment plan.</p>
+                  <div className="flex items-center justify-between text-xs text-muted-foreground">
+                    <span>Duration: 6 min</span>
+                    <span>Confidence: 94%</span>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-medium">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-secondary-soft rounded-full flex items-center justify-center">
+                        <Phone className="w-5 h-5 text-secondary" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-foreground">David K.</p>
+                        <p className="text-xs text-muted-foreground">Medication Review</p>
+                      </div>
+                    </div>
+                    <span className="text-xs text-primary bg-primary-soft px-2 py-1 rounded-full">Stable</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">Current medication regimen effective. Minor side effects reported but manageable. Next review scheduled for 2 weeks.</p>
+                  <div className="flex items-center justify-between text-xs text-muted-foreground">
+                    <span>Duration: 10 min</span>
+                    <span>Confidence: 89%</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );
