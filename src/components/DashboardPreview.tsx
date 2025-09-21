@@ -241,256 +241,81 @@ const DashboardPreview = () => {
             </div>
           </div>
 
-          {/* Recent Activity Feed */}
+          {/* How PsycheScreen Works */}
           <div>
-            <h3 className="text-2xl font-bold text-foreground mb-6">Recent Activity</h3>
-            <Card className="shadow-medium">
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4 p-3 bg-gradient-card rounded-lg">
-                    <div className="w-10 h-10 bg-primary-soft rounded-full flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-primary" />
+            <h3 className="text-3xl font-bold text-foreground text-center mb-12">How PsycheScreen Works</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              
+              {/* Steps Column */}
+              <div className="space-y-8">
+                
+                {/* Step 1 */}
+                <div className="flex items-start space-x-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-glow">
+                      1
                     </div>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-foreground">AI Call completed with Sarah M.</p>
-                      <p className="text-xs text-muted-foreground">Depression screening - Low risk detected</p>
-                    </div>
-                    <span className="text-xs text-muted-foreground">2 min ago</span>
                   </div>
-
-                  <div className="flex items-center space-x-4 p-3 bg-gradient-card rounded-lg">
-                    <div className="w-10 h-10 bg-secondary-soft rounded-full flex items-center justify-center">
-                      <Calendar className="w-5 h-5 text-secondary" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-foreground">Follow-up scheduled for Michael R.</p>
-                      <p className="text-xs text-muted-foreground">Next appointment: Tomorrow 2:00 PM</p>
-                    </div>
-                    <span className="text-xs text-muted-foreground">15 min ago</span>
-                  </div>
-
-                  <div className="flex items-center space-x-4 p-3 bg-gradient-card rounded-lg">
-                    <div className="w-10 h-10 bg-accent-soft rounded-full flex items-center justify-center">
-                      <Activity className="w-5 h-5 text-accent" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-foreground">Weekly report generated</p>
-                      <p className="text-xs text-muted-foreground">156 calls completed, 89% satisfaction rate</p>
-                    </div>
-                    <span className="text-xs text-muted-foreground">1 hour ago</span>
-                  </div>
-
-                  <div className="flex items-center space-x-4 p-3 bg-gradient-card rounded-lg">
-                    <div className="w-10 h-10 bg-success-soft rounded-full flex items-center justify-center">
-                      <Users className="w-5 h-5 text-success" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-foreground">New patient registered</p>
-                      <p className="text-xs text-muted-foreground">Jessica L. added to monitoring program</p>
-                    </div>
-                    <span className="text-xs text-muted-foreground">3 hours ago</span>
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">Proactive AI Calls</h4>
+                    <p className="text-muted-foreground">AI conducts empathetic conversations with patients.</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
 
-          {/* Key Features Highlight */}
-          <div>
-            <h3 className="text-2xl font-bold text-foreground mb-6">Key Platform Features</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="bg-gradient-card shadow-soft">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary-soft rounded-full flex items-center justify-center mb-4">
-                    <Phone className="w-6 h-6 text-primary" />
+                {/* Step 2 */}
+                <div className="flex items-start space-x-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-secondary rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-glow">
+                      2
+                    </div>
                   </div>
-                  <h4 className="text-lg font-semibold text-foreground mb-2">AI-Powered Calls</h4>
-                  <p className="text-sm text-muted-foreground">Automated screening calls that adapt to patient responses and detect mental health patterns.</p>
-                </CardContent>
-              </Card>
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">Real-Time Analysis</h4>
+                    <p className="text-muted-foreground">AI extracts emotional and psychological markers during calls.</p>
+                  </div>
+                </div>
 
-              <Card className="bg-gradient-card shadow-soft">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-secondary-soft rounded-full flex items-center justify-center mb-4">
-                    <Activity className="w-6 h-6 text-secondary" />
+                {/* Step 3 */}
+                <div className="flex items-start space-x-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-accent rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-glow">
+                      3
+                    </div>
                   </div>
-                  <h4 className="text-lg font-semibold text-foreground mb-2">Real-time Monitoring</h4>
-                  <p className="text-sm text-muted-foreground">Continuous tracking of patient mental health metrics with instant alerts for healthcare providers.</p>
-                </CardContent>
-              </Card>
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">Therapist Reports</h4>
+                    <p className="text-muted-foreground">Comprehensive reports enhance clinical decision-making.</p>
+                  </div>
+                </div>
 
-              <Card className="bg-gradient-card shadow-soft">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-accent-soft rounded-full flex items-center justify-center mb-4">
-                    <Users className="w-6 h-6 text-accent" />
+                {/* Step 4 */}
+                <div className="flex items-start space-x-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-success rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-glow">
+                      4
+                    </div>
                   </div>
-                  <h4 className="text-lg font-semibold text-foreground mb-2">Care Team Integration</h4>
-                  <p className="text-sm text-muted-foreground">Seamless collaboration between AI system and healthcare professionals for comprehensive care.</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">Patient Engagement</h4>
+                    <p className="text-muted-foreground">Ensures continuous support and monitoring 24/7.</p>
+                  </div>
+                </div>
 
-          {/* Upcoming Appointments */}
-          <div>
-            <h3 className="text-2xl font-bold text-foreground mb-6">Upcoming Appointments</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="shadow-medium">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-lg font-semibold text-foreground">Today's Schedule</h4>
-                    <Calendar className="w-5 h-5 text-primary" />
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between p-3 bg-gradient-card rounded-lg">
-                      <div>
-                        <p className="text-sm font-medium text-foreground">Sarah M.</p>
-                        <p className="text-xs text-muted-foreground">Follow-up Call</p>
-                      </div>
-                      <span className="text-xs text-muted-foreground">10:00 AM</span>
-                    </div>
-                    <div className="flex items-center justify-between p-3 bg-gradient-card rounded-lg">
-                      <div>
-                        <p className="text-sm font-medium text-foreground">Michael R.</p>
-                        <p className="text-xs text-muted-foreground">Screening Call</p>
-                      </div>
-                      <span className="text-xs text-muted-foreground">2:00 PM</span>
-                    </div>
-                    <div className="flex items-center justify-between p-3 bg-gradient-card rounded-lg">
-                      <div>
-                        <p className="text-sm font-medium text-foreground">Jessica L.</p>
-                        <p className="text-xs text-muted-foreground">Initial Assessment</p>
-                      </div>
-                      <span className="text-xs text-muted-foreground">4:30 PM</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              </div>
 
-              <Card className="shadow-medium">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-lg font-semibold text-foreground">This Week</h4>
-                    <Activity className="w-5 h-5 text-secondary" />
+              {/* Image Column */}
+              <div className="flex justify-center lg:justify-end">
+                <div className="relative">
+                  <div className="w-full max-w-md">
+                    <img 
+                      src="/src/assets/healthcare-professional.jpg" 
+                      alt="Healthcare professional analyzing patient data on computer dashboard" 
+                      className="w-full h-auto rounded-2xl shadow-elegant"
+                    />
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-muted-foreground">Monday</span>
-                      <span className="text-sm font-medium text-foreground">8 appointments</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-muted-foreground">Tuesday</span>
-                      <span className="text-sm font-medium text-foreground">12 appointments</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-muted-foreground">Wednesday</span>
-                      <span className="text-sm font-medium text-foreground">6 appointments</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-muted-foreground">Thursday</span>
-                      <span className="text-sm font-medium text-foreground">9 appointments</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-muted-foreground">Friday</span>
-                      <span className="text-sm font-medium text-foreground">7 appointments</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
+                </div>
+              </div>
 
-          {/* AI Call Summaries */}
-          <div>
-            <h3 className="text-2xl font-bold text-foreground mb-6">Recent AI Call Summaries</h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <Card className="shadow-medium">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-primary-soft rounded-full flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-foreground">Sarah M.</p>
-                        <p className="text-xs text-muted-foreground">Depression Screening</p>
-                      </div>
-                    </div>
-                    <span className="text-xs text-success bg-success-soft px-2 py-1 rounded-full">Low Risk</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-3">Patient reported improved mood and better sleep patterns. Medication adherence at 95%. Recommended continued monitoring.</p>
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <span>Duration: 8 min</span>
-                    <span>Confidence: 92%</span>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-medium">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-warning-soft rounded-full flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-warning" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-foreground">Michael R.</p>
-                        <p className="text-xs text-muted-foreground">Anxiety Assessment</p>
-                      </div>
-                    </div>
-                    <span className="text-xs text-warning bg-warning-soft px-2 py-1 rounded-full">Moderate Risk</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-3">Elevated anxiety levels detected. Work-related stress factors identified. Scheduled follow-up with care team within 24 hours.</p>
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <span>Duration: 12 min</span>
-                    <span>Confidence: 87%</span>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-medium">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-success-soft rounded-full flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-success" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-foreground">Jessica L.</p>
-                        <p className="text-xs text-muted-foreground">Wellness Check</p>
-                      </div>
-                    </div>
-                    <span className="text-xs text-success bg-success-soft px-2 py-1 rounded-full">Excellent</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-3">Significant progress reported. Coping strategies working well. Patient feels supported and motivated to continue treatment plan.</p>
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <span>Duration: 6 min</span>
-                    <span>Confidence: 94%</span>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-medium">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-secondary-soft rounded-full flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-secondary" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-foreground">David K.</p>
-                        <p className="text-xs text-muted-foreground">Medication Review</p>
-                      </div>
-                    </div>
-                    <span className="text-xs text-primary bg-primary-soft px-2 py-1 rounded-full">Stable</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-3">Current medication regimen effective. Minor side effects reported but manageable. Next review scheduled for 2 weeks.</p>
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <span>Duration: 10 min</span>
-                    <span>Confidence: 89%</span>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
 
