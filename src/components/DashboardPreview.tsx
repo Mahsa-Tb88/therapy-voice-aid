@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar } from 'recharts';
 import { TrendingUp, TrendingDown, Activity, Users, Phone, Calendar } from "lucide-react";
 import userDashboardScreen from "@/assets/user-dashboard-screen.jpg";
-import healthcareTechnician from "@/assets/healthcare-technician.jpg";
+import healthcareTechnician from "@/assets/healthcare-technician-new.jpg";
 
 // Sample data for charts
 const moodData = [
