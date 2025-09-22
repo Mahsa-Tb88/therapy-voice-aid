@@ -15,15 +15,14 @@ const AICallSection = () => {
     {
       step: "1",
       title: "Patient Registration",
-      description: "Patient fills out initial form with contact information",
+      description: "Patient fills out initial form with contact information and preferences for communication",
       icon: MessageCircle,
-      image: step1Registration,
-      alt: "Person filling out digital patient registration form on tablet"
+      // Add image here: image: step1Registration, alt: "Description"
     },
     {
       step: "2", 
       title: "AI Outreach",
-      description: "AI agent automatically calls patient at scheduled time",
+      description: "AI agent automatically calls patient at scheduled time with personalized approach",
       icon: Phone,
       image: step2Outreach,
       alt: "Smartphone showing incoming call from PsycheScreen AI Agent"
@@ -31,15 +30,14 @@ const AICallSection = () => {
     {
       step: "3",
       title: "Empathetic Conversation",
-      description: "AI conducts natural conversation about mental health status",
+      description: "AI conducts natural, supportive conversation about mental health status and concerns",
       icon: Brain,
-      image: step3Conversation,
-      alt: "Person having comfortable phone conversation with AI agent"
+      // Add image here: image: step3Conversation, alt: "Description"
     },
     {
       step: "4",
       title: "Data Analysis",
-      description: "Insights are processed and sent to healthcare providers",
+      description: "Insights are processed and comprehensive reports sent to healthcare providers",
       icon: CheckCircle,
       image: step4Analysis,
       alt: "Healthcare professional reviewing AI-generated patient insights on computer"
@@ -127,21 +125,31 @@ const AICallSection = () => {
           <h3 className="text-2xl font-bold text-center mb-8">How AI Calls Work</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {callProcess.map((step, index) => (
-              <div key={index} className="text-center">
-                <img 
-                  src={step.image} 
-                  alt={step.alt}
-                  className="w-full aspect-square object-cover rounded-lg shadow-lg mb-4"
-                />
-                <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                  <step.icon className="w-8 h-8 text-primary" />
-                </div>
-                <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-4 text-sm font-bold">
-                  {step.step}
-                </div>
-                <h4 className="font-semibold mb-2">{step.title}</h4>
-                <p className="text-muted-foreground text-sm">{step.description}</p>
-              </div>
+              <Card key={index} className="text-center border-0 bg-background/50 hover:bg-background/80 transition-colors">
+                <CardContent className="p-6">
+                  {/* Optional Image */}
+                  {step.image && (
+                    <img 
+                      src={step.image} 
+                      alt={step.alt}
+                      className="w-full aspect-video object-cover rounded-lg shadow-md mb-4"
+                    />
+                  )}
+                  
+                  {/* Icon and Step Number */}
+                  <div className="relative mb-4">
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                      <step.icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold">
+                      {step.step}
+                    </div>
+                  </div>
+                  
+                  <h4 className="font-semibold text-lg mb-3">{step.title}</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
