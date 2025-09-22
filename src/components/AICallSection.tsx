@@ -120,36 +120,97 @@ const AICallSection = () => {
           </div>
         </div>
 
-        {/* Process Flow */}
-        <div className="bg-secondary/10 rounded-xl p-8 border">
-          <h3 className="text-2xl font-bold text-center mb-8">How AI Calls Work</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* How AI Calls Work - Simple Icons Section */}
+        <div className="bg-muted/30 rounded-xl py-16 px-8">
+          <h3 className="text-3xl font-bold text-center mb-12 text-foreground">How AI Calls Work</h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {callProcess.map((step, index) => (
-              <Card key={index} className="text-center border-0 bg-background/50 hover:bg-background/80 transition-colors">
-                <CardContent className="p-6">
-                  {/* Optional Image */}
-                  {step.image && (
+              <div key={index} className="text-center">
+                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                  <step.icon className="w-10 h-10 text-primary" />
+                </div>
+                <h4 className="font-semibold text-lg mb-3 text-foreground">{step.title}</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed px-2">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Detailed Process with Photos */}
+        <div className="py-20">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl font-bold text-foreground mb-4">
+              Detailed AI Call Process
+            </h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              See how our AI technology works step-by-step to provide comprehensive mental health support
+            </p>
+          </div>
+          
+          <div className="space-y-16">
+            {callProcess.map((step, index) => (
+              <div key={index} className={`flex flex-col lg:flex-row items-center gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                {step.image && (
+                  <div className="flex-1">
                     <img 
                       src={step.image} 
                       alt={step.alt}
-                      className="w-full aspect-video object-cover rounded-lg shadow-md mb-4"
+                      className="w-full max-w-lg mx-auto rounded-xl shadow-lg object-cover aspect-[4/3]"
                     />
-                  )}
-                  
-                  {/* Icon and Step Number */}
-                  <div className="relative mb-4">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                      <step.icon className="w-7 h-7 text-primary" />
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold">
-                      {step.step}
-                    </div>
                   </div>
-                  
-                  <h4 className="font-semibold text-lg mb-3">{step.title}</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
-                </CardContent>
-              </Card>
+                )}
+                
+                <div className="flex-1">
+                  <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/10">
+                    <CardContent className="p-8">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                          <step.icon className="w-8 h-8 text-primary" />
+                        </div>
+                        <div>
+                          <div className="text-sm text-muted-foreground font-medium mb-1">Step {step.step}</div>
+                          <h4 className="text-2xl font-bold text-foreground">{step.title}</h4>
+                        </div>
+                      </div>
+                      
+                      <p className="text-muted-foreground leading-relaxed mb-6">{step.description}</p>
+                      
+                      {/* Additional details based on step */}
+                      {step.step === "1" && (
+                        <div className="bg-background/60 rounded-lg p-4 border">
+                          <p className="text-sm text-foreground">
+                            <span className="font-semibold">Key Features:</span> Secure form, flexible scheduling options, privacy controls
+                          </p>
+                        </div>
+                      )}
+                      
+                      {step.step === "2" && (
+                        <div className="bg-background/60 rounded-lg p-4 border">
+                          <p className="text-sm text-foreground">
+                            <span className="font-semibold">Technology:</span> Advanced AI voice synthesis, natural language processing
+                          </p>
+                        </div>
+                      )}
+                      
+                      {step.step === "3" && (
+                        <div className="bg-background/60 rounded-lg p-4 border">
+                          <p className="text-sm text-foreground">
+                            <span className="font-semibold">Approach:</span> Evidence-based conversation techniques, adaptive responses
+                          </p>
+                        </div>
+                      )}
+                      
+                      {step.step === "4" && (
+                        <div className="bg-background/60 rounded-lg p-4 border">
+                          <p className="text-sm text-foreground">
+                            <span className="font-semibold">Output:</span> Comprehensive reports, risk assessments, treatment recommendations
+                          </p>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
