@@ -5,6 +5,10 @@ import aiCallPhone from "@/assets/ai-call-phone.jpg";
 import aiCallDriving from "@/assets/ai-call-driving.jpg";
 import aiCallBed from "@/assets/ai-call-bed.jpg";
 import aiCallWalking from "@/assets/ai-call-walking.jpg";
+import step1Registration from "@/assets/step-1-registration.jpg";
+import step2Outreach from "@/assets/step-2-outreach.jpg";
+import step3Conversation from "@/assets/step-3-conversation.jpg";
+import step4Analysis from "@/assets/step-4-analysis.jpg";
 
 const AICallSection = () => {
   const callProcess = [
@@ -12,25 +16,33 @@ const AICallSection = () => {
       step: "1",
       title: "Patient Registration",
       description: "Patient fills out initial form with contact information",
-      icon: MessageCircle
+      icon: MessageCircle,
+      image: step1Registration,
+      alt: "Person filling out digital patient registration form on tablet"
     },
     {
       step: "2", 
       title: "AI Outreach",
       description: "AI agent automatically calls patient at scheduled time",
-      icon: Phone
+      icon: Phone,
+      image: step2Outreach,
+      alt: "Smartphone showing incoming call from PsycheScreen AI Agent"
     },
     {
       step: "3",
       title: "Empathetic Conversation",
       description: "AI conducts natural conversation about mental health status",
-      icon: Brain
+      icon: Brain,
+      image: step3Conversation,
+      alt: "Person having comfortable phone conversation with AI agent"
     },
     {
       step: "4",
       title: "Data Analysis",
       description: "Insights are processed and sent to healthcare providers",
-      icon: CheckCircle
+      icon: CheckCircle,
+      image: step4Analysis,
+      alt: "Healthcare professional reviewing AI-generated patient insights on computer"
     }
   ];
 
@@ -113,9 +125,14 @@ const AICallSection = () => {
         {/* Process Flow */}
         <div className="bg-secondary/10 rounded-xl p-8 border">
           <h3 className="text-2xl font-bold text-center mb-8">How AI Calls Work</h3>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {callProcess.map((step, index) => (
               <div key={index} className="text-center">
+                <img 
+                  src={step.image} 
+                  alt={step.alt}
+                  className="w-full aspect-square object-cover rounded-lg shadow-lg mb-4"
+                />
                 <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
                   <step.icon className="w-8 h-8 text-primary" />
                 </div>
